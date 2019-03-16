@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int yy,mm,dd;
+	int i,days,sumDay=0;
+    scanf("%d-%d-%d",&yy,&mm,&dd);
+	for(i=1;i<mm;i++)
+	{
+		switch(i)
+		{
+		case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+			days=31;break;
+		case 4:case 6:case 9:case 11:days=30;break;
+		case 2:days=28;
+			if((yy%4==0&&yy%100!=0)||(yy%400==0))
+				days++;
+		}
+		sumDay=sumDay+days;
+	}
+	sumDay=sumDay+dd;
+	printf("%d\n",sumDay);
+	return 0;
+}

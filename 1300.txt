@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class BASE1 { 
+public: void show() { cout << i << "\n"; } 
+protected: int i; 
+}; 
+
+class BASE2 { 
+public: void show() { cout << j << "\n"; } 
+protected: int j; 
+}; 
+
+class DERIVED: public BASE1, public BASE2 { 
+public: void set(int x, int y) 
+{ i = x; j = y; } 
+}; 
+int main() 
+{ DERIVED obj; 
+
+obj.set(5, 7); 
+obj.BASE1::show(); 
+obj.BASE2::show(); 
+return 0; 
+} 
+
+ 

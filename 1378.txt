@@ -1,0 +1,25 @@
+//??????
+#include<stdio.h>
+int main()
+{
+ int n,i,j,b[100],x,a[1000],k,z,temp;
+ scanf("%d",&n);
+ for(z=0;z<n;z++)
+ scanf("%d",&b[z]);
+ for(z=0;z<n;z++)
+ {
+ 	x=b[z];
+ for(i=0;;i++)
+{
+ a[i]=x%2;
+ x=x/2;
+ if(x==0)break;
+}
+ for(j=0;j<=i;j++)
+ if(a[j]!=0)break;
+ for(k=1,temp=a[j];k<=j;k++)
+ temp*=2;
+ printf("%d\n",temp);
+}
+ return 0;
+}

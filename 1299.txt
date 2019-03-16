@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std; 
+class DEMO_CLASS { 
+
+public: int x; 
+DEMO_CLASS(int i); 
+~DEMO_CLASS(); 
+
+}; 
+DEMO_CLASS::DEMO_CLASS(int i) 
+{ cout << "Initial value is " << i << "\n"; 
+x=i; 
+return; 
+} 
+DEMO_CLASS::~DEMO_CLASS() 
+{ cout << "Goodbye!\n"; 
+return; 
+} 
+int main() 
+{ DEMO_CLASS obj(30); 
+cout << "This is the end of main().\n"; 
+cout << obj.x; 
+return 0; 
+} 

@@ -1,0 +1,34 @@
+#include<stdio.h>
+#define M 12
+#define N 5
+int main()
+{
+	int a[M][N],i,j,sum[5]={0},tsum=0,k=0;
+	double b[5];
+	for(i=0;i<M;i++)
+	  for(j=0; j<N;j++)
+	  scanf("%d",&a[i][j]);
+	  for(j=0;j<N;j++)
+	  {
+
+	      for(i=0;i<M;i++)
+	      sum[k]+=a[i][j];
+	      k++;
+	   }
+	  for(k=0;k<5;k++)
+	  tsum+=sum[k];
+	  
+	  for(k=0;k<5;k++)
+	  b[k]=(double)sum[k]/tsum;
+	  
+	  for(k=0;k<5;k++)
+	  printf("%d ",sum[k]);
+	  
+	  printf("\n");
+	  for(k=0;k<5;k++)
+	  printf("%.3f ",b[k]);
+	  
+	  return 0;
+ }
+	  
+	  

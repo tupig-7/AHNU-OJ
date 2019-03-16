@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+class Rectangle{
+	private:
+		double x1,y1;
+	    double x2,y2;
+	public:
+		Rectangle(double x,double y,double z,double w){
+			x1=x;
+			y1=y;
+			x2=z;
+			y2=w;
+		}
+		double GetArea()
+    {
+        return abs(x1-x2)*abs(y1-y2);
+    }
+};
+int main()
+{
+	double x,y,z,w;
+	double x1,y1,z1,w1;
+	cin>>x>>y>>z>>w;
+	cin>>x1>>y1>>z1>>w1;
+	Rectangle chang1(x,y,z,w);
+	Rectangle chang2(x1,y1,z1,w1);
+	cout<<"Area:"<<chang1.GetArea()<<endl;
+	cout<<"After modified area is:"<<chang2.GetArea()<<endl;
+	return 0;
+ } 

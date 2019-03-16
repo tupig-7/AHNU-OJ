@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+   
+int fish[5],i;
+fish[0]=1;
+do
+{
+fish[0]=fish[0]+5;
+for(i=1;i<5;i++)
+{
+	fish[i]=(fish[i-1]-1)/5*4;
+	if(fish[i]%5!=1)
+		break;
+}
+}while(i<5);
+printf("%d\n",fish[0]);
+return 0;
+}
+

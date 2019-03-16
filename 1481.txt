@@ -1,0 +1,25 @@
+#include <stdio.h> 
+void fun( int m, int *k, int xx[] ) 
+{ 
+	int i,j,y=0,count=0;
+	for(i=3;i<m;i++)
+	for(j=2;j<i;j++)
+		if(i%j==0)
+		{
+          xx[y++]=i;
+		  count++;
+          break;
+		}
+		*k=count;
+} 
+int main() 
+{ 
+	int m, n, zz[100]; 
+printf( "\nPlease enter an integer number between 10 and 100: " ); 
+scanf( "%d", &n ); 
+fun( n, &m, zz ); 
+printf( "\n\nThere are %d non-prime numbers less than %d:", m, n ); 
+for( n = 0; n <= m-1; n++ ) 
+printf( "\n %4d", zz[n] ); 
+} 
+

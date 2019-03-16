@@ -1,0 +1,81 @@
+#include<stdio.h>
+#include<string.h>
+char str[8]={'0','1','2','3','4','5','6','7'};
+void exchange1(char a[],int b[],int n);
+void exchange2(int c[],char d[],int n);
+int main()
+{
+  int n,i,j,k,cd;
+  char str1[10001]={'0'},temp2[30003];
+  char ch;
+  int temp1[40004]={0},x;
+  scanf("%d",&n);
+  scanf("%c",&ch);
+  for(i=1;i<=n;i++)
+{
+   gets(str1);
+   x=strlen(str1);
+   exchange1(str1,temp1,x);
+  /* exchange2(temp1,temp2,x*4);
+   cd=strlen(temp2);*/
+   for(j=0;j<x*4;j++)
+   if(temp1[j]!=0)break;
+   if(j==x*4)
+	   printf("0\n");
+   else{
+  for(k=j;k<x*4;k++)
+   printf("%d",temp1[k]);
+  printf("\n");}
+}
+  return 0;
+}
+void exchange1(char a[],int b[],int n)
+{
+	int i,j=0;
+	for(i=0;i<n;i++)
+	{
+	switch(a[i])
+	{
+		case '0':b[j]=0;b[j+1]=0;b[j+2]=0;b[j+3]=0;break;
+		case '1':b[j]=0;b[j+1]=0;b[j+2]=0;b[j+3]=1;break;
+		case '2':b[j]=0;b[j+1]=0;b[j+2]=1;b[j+3]=0;break;
+		case '3':b[j]=0;b[j+1]=0;b[j+2]=1;b[j+3]=1;break;
+		case '4':b[j]=0;b[j+1]=1;b[j+2]=0;b[j+3]=0;break;
+		case '5':b[j]=0;b[j+1]=1;b[j+2]=0;b[j+3]=1;break;
+	    case '6':b[j]=0;b[j+1]=1;b[j+2]=1;b[j+3]=0;break;
+		case '7':b[j]=0;b[j+1]=1;b[j+2]=1;b[j+3]=1;break;
+		case '8':b[j]=1;b[j+1]=0;b[j+2]=0;b[j+3]=0;break;
+		case '9':b[j]=1;b[j+1]=0;b[j+2]=0;b[j+3]=1;break;
+		case 'A':b[j]=1;b[j+1]=0;b[j+2]=1;b[j+3]=0;break;
+		case 'B':b[j]=1;b[j+1]=0;b[j+2]=1;b[j+3]=1;break;	
+		case 'C':b[j]=1;b[j+1]=1;b[j+2]=0;b[j+3]=0;break;	
+		case 'D':b[j]=1;b[j+1]=1;b[j+2]=0;b[j+3]=1;break;	
+		case 'E':b[j]=1;b[j+1]=1;b[j+2]=1;b[j+3]=0;break;
+		case 'F':b[j]=1;b[j+1]=1;b[j+2]=1;b[j+3]=1;break;
+	}
+    j+=4;
+   }
+}
+void exchange2(int c[],char d[],int n)
+{
+	int i,j,k=0;
+	if(n%3==0)
+	for(i=n-1;i>=2;i-=3)
+		for(j=0;j<3;j++)
+	d[k++]=str[c[i]/*+c[i-1]*2+c[i-2]*4*/];
+	else if(n%3==1)
+	{
+	for(i=n-1;i>=2;i-=3)
+		for(j=0;j<3;j++)
+	d[k++]=str[c[i]/*+c[i-1]*2+c[i-2]*4*/];
+	d[k++]=str[c[0]];
+	}
+	else
+	{
+	for(i=n-1;i>=2;i-=3)
+		for(j=0;j<3;j++)
+	d[k++]=str[c[i]/*+c[i-1]*2+c[i-2]*4*/];
+	d[k++]=str[c[1]/*+c[0]*2*/];
+	}
+	d[k]='\0';
+}

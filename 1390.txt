@@ -1,0 +1,17 @@
+#include<stdio.h>
+#define N 4
+int main()
+{
+	int beg=95859,end,a[N],x,j,flag=1;
+	for(end=beg+1;;end++)
+	{
+     a[0]=end%10;
+     a[1]=end/10%10;
+     a[2]=end/1000%10;
+     a[3]=end/10000;
+     
+     if(a[0]==a[3]&&a[1]==a[2])break;
+	}
+	printf("%d\n%.2f",end,(double)(end-beg)/2);
+	return 0;
+}

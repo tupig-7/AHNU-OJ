@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	int i,j,n;
+	int x[100]={0};
+	x[99]++;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+      for(j=0;j<100;j++)
+	  {
+          x[j]*=2;
+		  if(x[j]>9)
+		  {
+			  x[j]=x[j]-10;
+			  x[j-1]=x[j-1]+1;
+		  }
+	  }
+	}
+	for(i=0;i<100;i++)
+	{
+		if(x[i]!=0)
+		{
+			j=i;
+			break;
+		}
+	}
+	for(;j<100;j++)
+	printf("%d",x[j]);
+	printf("\n");
+	return 0;
+}

@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+	char str[1000],ch;
+	int a=0,b=0,c=0,d=0,e=0,f=0,i=0;
+	gets(str);
+	for(i=0;str[i]!='\0';i++)
+	{
+	if(str[i]=='{')
+	a++;
+	else if(str[i]=='}')
+	b++;
+	else if(str[i]=='(')
+	c++;
+	else if(str[i]==')')
+	d++;
+	else if(str[i]=='[')
+	e++;
+	else if(str[i]==']')
+	f++;
+	}
+	if(a==b&&d==c&&e==f)
+	printf("YES\n");
+	else
+	printf("NO\n");
+	return 0;
+}
+	

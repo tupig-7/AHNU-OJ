@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+    int a,n,i;
+    double sum=0;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        scanf("%d",&a);
+        sum+=a;
+    }
+	printf("%.2f",(double)sum/n);
+	return 0;
+}

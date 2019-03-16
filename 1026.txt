@@ -1,0 +1,15 @@
+#include<stdio.h>
+#define N 5
+int main()
+{
+    int a,b[N],i,sum=0;
+    scanf("%d",&a);
+    for(i=0;i<=4;i++)
+    {
+    scanf("%d",&b[i]);
+    if(b[i]<a)
+    sum+=b[i];
+    }
+    printf("%d\n",sum);
+    return 0;
+}

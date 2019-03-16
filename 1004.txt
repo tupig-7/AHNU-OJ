@@ -1,0 +1,21 @@
+#include <stdio.h>
+#define N 100
+int main()
+{
+    int r,t,a[N],i;
+    scanf("%d",&t);
+    for(i=0;i<t;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<t-1;i++)
+    {
+    do
+    {r=a[i]%a[i+1];
+     a[i]=a[i+1];
+     a[i+1]=r;
+    }while(r!=0);
+    a[i+1]=a[i];
+    }
+    
+	printf("%d\n",a[t-2]);
+	return 0;
+}

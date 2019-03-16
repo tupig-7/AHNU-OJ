@@ -1,0 +1,22 @@
+#include<stdio.h>
+int isprime(int x)
+ {int i;
+  for(i=2;i<x;i++)
+  if(x%i==0)
+  return 0;
+  return 1;
+  }
+  
+  int main()
+  {
+  	int x,a,b,max,min;
+  	scanf("%d%d",&a,&b);
+  	max=a>b?a:b;
+  	min=a<b?a:b;
+  	for(;min<=max;min++)
+  {	x=isprime(min);
+      if(x==1)
+      printf("%d\n",min);
+  }
+  return 0;
+  }

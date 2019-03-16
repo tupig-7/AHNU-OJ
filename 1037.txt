@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int sum=1;
+void dfs(int n){
+	for(int i=1;i<=(n/2);i++)
+	{
+		if(n==1)return;
+		else dfs(i);
+			sum++;
+	}
+}
+int main()
+{
+	int n;
+	while(cin>>n&&n!=-1)
+	{
+		sum=1;
+		dfs(n);
+		cout<<sum<<endl;
+	}
+	return 0;
+ } 

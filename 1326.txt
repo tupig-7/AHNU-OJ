@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main()
+{
+	int month[13]={0,31,28,31,30,31,30,31,31,30,31,30,31},dd,mm,yyyy; 
+	scanf("%d%d%d",&dd,&mm,&yyyy);
+	if(yyyy>=0)
+	{
+	if(mm==2)
+{	  if(yyyy%4==0&&yyyy%100!=0||yyyy%400==0)
+   {
+	if(0<dd&&dd<=month[mm]+1)
+       printf("YES");
+    else
+       printf("NO");
+   }
+   else if(0<dd&&dd<=month[mm])
+       printf("YES");
+    else
+       printf("NO");
+   }
+    else
+{
+    if(0<dd&&dd<=month[mm])
+       printf("YES");
+    else
+       printf("NO");
+}
+}
+	else
+	printf("NO");
+	return 0;
+}
+
+	

@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	double k,a,b,v,d,V;
+	while(scanf("%lf %lf %lf %lf",&k,&a,&b,&v)!=EOF)
+	{
+		d=fabs(k*a-b)/sqrt(k*k+1); 
+		V=d*v/sqrt(a*a+b*b-d*d); 
+		printf("%.3f\n",V);
+	}
+	return 0;
+}

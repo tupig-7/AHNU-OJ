@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+int sum = 0;
+int store[10];
+void Output()
+{
+	for(int i = 9; i >= 0; --i)
+	{
+	   cout<<store[i]<<' ';
+	}
+		cout<<endl;
+		++sum;
+}
+void Compute(int score,int num)
+{
+	if(score < 0 || score > 10 * (num+1))
+	   return;
+	if(num == 0)
+	{
+	   store[num] = score;
+	   Output();
+	   return;
+	}
+	for(int i = 0;i <=10; ++i)
+	{
+	   store[num] = i;
+	   Compute(score-i,num-1);
+	}
+}
+
+int main()
+{
+	int n;
+	cin>>n;
+	Compute(n,9);
+	cout<<"Sum="<<sum<<endl;
+	return 0;
+}
+

@@ -1,0 +1,47 @@
+#include<stdio.h>
+int daysum(int yy,int mm,int dd)
+{
+		int i,days,sumDay=0; 
+	for(i=1;i<mm;i++)
+	{
+   	switch(i)	
+	{	
+	case 1:case 3:case 5:case 7:case 8:case 10:case 12:days=31;break;	
+		case 4:case 6:case 9:case 11:days=30;break;	
+		case 2:days=28;			if((yy%4==0&&yy%100!=0)||(yy%400==0))days++;	break;
+	}	
+		sumDay=sumDay+days;
+	}	     
+		sumDay=sumDay+dd;
+         for(i=1;i<yy;i++)
+		 {
+			 if((i%4==0&&i%100!=0)||(i%400==0))
+				 sumDay+=366;
+			 else
+			 sumDay+=365;
+		 }
+			return sumDay;
+}
+	int main()
+{
+	int nn,yue,tt,x,temp[10000],k=0,n,i;
+	scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+	scanf("%d.%d.%d",&nn,&yue,&tt);
+	x=daysum(nn,yue,tt)%7;
+	switch(x)
+	{
+	case 0: temp[k++]=7;break;
+	case 1: temp[k++]=1;break;
+	case 2: temp[k++]=2;break;
+	case 3: temp[k++]=3;break;
+	case 4: temp[k++]=4;break;
+	case 5: temp[k++]=5;break;
+	case 6: temp[k++]=6;break;
+	}
+	}
+	for(i=0;i<k;i++)
+	printf("%d\n",temp[i]);
+	return 0;
+}		

@@ -1,0 +1,71 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int b[10000]={0};
+int M,N,K,k=0;
+int findMax(int &index);//?????????????????????????????????????? 
+int main()
+{
+	int i,j,index,t,tt;
+	int temp;//?????????????? 
+	int max,sum=0;
+	cin>>N>>M>>K;
+	for(i=1;i<=N;i++)
+	for(j=1;j<=M;j++)
+		cin>>b[(i-1)*M+j];
+	max=findMax(index);
+	
+	if(K>ceil(index*1.0/M)*2+1)//???????????????????? 
+	{
+		sum+=max;
+		K=K-ceil(index*1.0/M)-1;
+		b[index]=0;	
+		temp=index;	
+		
+		while(K>0)
+	{
+		max=findMax(index);
+		t=temp%M==0?M:temp%M;
+		tt=index%M==0?M:index%M;//???????? 
+		if(K-(abs(ceil(temp*1.0/M)-ceil(index*1.0/M))+abs(t-tt))-1>=ceil(index*1.0/M))//???????????????????? 
+		{
+			if(max==0)
+			{
+				cout<<sum<<endl;
+				return 0;
+			}
+				
+			else
+			{
+				sum+=max;//???????????? 
+				K=K-(abs(ceil(temp*1.0/M)-ceil(index*1.0/M))+abs(t-tt))-1; 
+			
+				
+				b[index]=0;
+				temp=index;
+			}
+			
+		}
+		else
+			break;
+	}
+	}
+	
+	cout<<sum<<endl;
+	return 0;
+	
+}
+int findMax(int &index)
+{
+	int i=0;
+	int max=-1;
+	for(i=1;i<=M*N;i++)
+	{
+		if(max<b[i])
+		{
+			max=b[i];
+			index=i;
+		}
+	}
+	return max; 
+}

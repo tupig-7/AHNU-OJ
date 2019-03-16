@@ -1,0 +1,148 @@
+#include<iostream>
+#include<stdio.h>
+ #include<string.h>
+ #include<ctype.h>
+ #include<malloc.h> /* malloc()?? */
+ #include<limits.h> /* INT_MAX?? */
+ #include<stdio.h> /* EOF(=^Z??F6),NULL */
+ #include<stdlib.h> /* atoi() */
+ #include<io.h> /* eof() */
+ #include<math.h> /* floor(),ceil(),abs() */
+ #include<process.h> /* exit() */
+using namespace std;
+ #define TRUE 1
+ #define FALSE 0
+ #define OK 1
+ #define ERROR 0
+/*??????????????????????????????????????int??????*/
+ typedef int Status; /* Status??????????,??????????????????????????OK?? */
+#define STACK_INIT_SIZE 100
+#define STACKINCREMENT 10
+typedef int SElemType;
+typedef struct{
+	SElemType *base;
+	SElemType *top;
+	int stacksize;
+}SqStack;
+Status InitStack(SqStack &S){
+//????????????S
+	S.base = (SElemType*)malloc(STACK_INIT_SIZE*sizeof(SElemType));
+	if(!S.base)exit(OVERFLOW);
+	S.top = S.base;
+	S.stacksize = STACK_INIT_SIZE;
+	return OK;
+}//InitStack
+Status StackEmpty(SqStack S){
+	return (S.top==S.base);
+}
+Status Push(SqStack &S,SElemType e){
+	if(S.top-S.base >= S.stacksize){//??????????????????
+		S.base = (SElemType*)realloc(S.base,(S.stacksize+STACKINCREMENT)*sizeof(SElemType));
+	if(!S.base)exit(OVERFLOW);//????????????
+	S.top = S.base + S.stacksize;
+	S.stacksize+=STACKINCREMENT;
+	}
+	*S.top=e;
+	S.top++;
+	return OK;
+}
+Status Pop(SqStack &S,SElemType &e){
+	//??????????????????S??????????????e????????
+	if(S.top==S.base)return ERROR;
+	S.top--;
+	e=*S.top;
+	return OK;
+}
+Status GetTop(SqStack S,SElemType &e){
+	if(S.top==S.base)return ERROR;
+	e=*(S.top-1);
+	return OK;
+}
+Status GetLength(SqStack S)
+{
+	return (S.top-S.base);
+}
+int main()
+{
+	int ch1,ch2,e;
+	SqStack s;
+	InitStack(s);
+	SElemType *p=s.base;
+	int i=1,j=1;
+	char ch[10];
+	char temp[2]="q",temp1[2]="+",temp2[2]="-",temp3[2]="*",temp4[2]="/";
+	int k=0,x;
+	while(1)
+	{
+		scanf("%s",&ch);
+		if(strcmp(ch,temp1)==0)
+		{
+			if(GetLength(s)>=2)
+			    		{
+			    			Pop(s,ch1);
+			    			Pop(s,ch2);
+			    			Push(s,ch1+ch2);
+						}
+						else
+						{
+						printf("Error\n");
+						return 0;
+						}
+		}
+		else if(strcmp(ch,temp2)==0)
+		{
+			if(GetLength(s)>=2)
+			    		{
+			    			Pop(s,ch1);
+			    			Pop(s,ch2);
+			    			Push(s,ch2-ch1);
+						}
+						else
+						{
+						printf("Error\n");
+						return 0;
+						}
+		}
+		else if(strcmp(ch,temp3)==0)
+		{
+			if(GetLength(s)>=2)
+			    		{
+			    			Pop(s,ch1);
+			    			Pop(s,ch2);
+			    			Push(s,ch1*ch2);
+						}
+						else
+						{
+						printf("Error\n");
+						return 0;
+						}
+		}
+		else if(strcmp(ch,temp4)==0)
+		
+		{
+				if(GetLength(s)>=2)
+			    		{
+			    			Pop(s,ch1);
+			    			Pop(s,ch2);
+			    			Push(s,ch2/ch1);
+			    			
+						}
+						else
+						{
+						printf("Error\n");
+						return 0;
+						}
+		}
+		else if(strcmp(ch,temp)==0)break;
+		else
+	   {
+	   	x=ch[0]-'0';
+	   	for(i=1;ch[i]!='\0';i++)
+	   	x=x*10+(ch[i]-'0');
+	   	Push(s,x);
+	   }
+}
+	GetTop(s,e);
+	printf("%d",e);
+	return 0;
+}

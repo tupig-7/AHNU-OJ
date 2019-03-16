@@ -1,0 +1,22 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	char a[52]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+	char str[100],str1[6],str2[6],strend[]="ENDOFINPUT";
+	int i;
+	while(strcmp(gets(str1),strend))
+	{
+		gets(str);
+		gets(str2);
+		int length=strlen(str);
+		for(i=0;i<length;i++)
+			if(str[i]>='A'&&str[i]<='Z')
+			str[i]=a[str[i]-5+26-'A'];
+		puts(str);
+
+	}
+	return 0;
+}
+

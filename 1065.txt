@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int isrun(int i)
+{
+	if(i%4==0&&i%100!=0||i%400==0)
+	return 1;
+	else
+	return 0;
+}
+int main()
+{
+char week[7][10]={"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday"};  
+    int month[2][12]={31,28,31,30,31,30,31,31,30,31,30,31,31,29,31,30,31,30,31,31,30,31,30,31};  
+    int y[2]={365,366};  
+    int a;  
+    int ofweek;  
+    int year;  
+    int mon;  
+    int day;  
+    int i;  
+    while(1){  
+        year=2000;  
+        mon=0;  
+    cin>>a; 
+    if(a==-1)break;  
+    ofweek=a%7;  
+    for(i=2000;a>=y[isrun(i)];i++)  
+    { a-=y[isrun(i)];  
+      year++;}  
+    for(i=0;a>=month[isrun(year)][i];i++)  
+    { a-=month[isrun(year)][i];  
+      mon++;}  
+    printf("%d-%02d-%02d %s\n",year,mon+1,a+1,week[ofweek]);}  
+    return 0;}  

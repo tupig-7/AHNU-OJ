@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+int main()
+{
+	int m=0,n=0,i=0,j=0,k=0,sum=0;
+	char str1[1000],str2[1001],str[1000][1000];
+	gets(str1);
+    m=strlen(str1);
+	gets(str2);
+	n=strlen(str2);
+	for(i=0;i<n;i++)
+	{
+		if((str2[i]>='a'&&str2[i]<='z')||(str2[i]>='A'&&str2[i]<='Z'))
+		{
+			str[k][j++]=str2[i];
+			continue;
+		}
+		str[k][j]='\0';
+	//	printf("%s %s\n",str1,str[k]);
+		if(stricmp(str1,str[k])==0)
+			sum++;
+		k++;
+		j=0;
+	}
+	printf("%d\n",sum);
+		return 0;
+}

@@ -1,0 +1,22 @@
+#include<stdio.h>
+#define N 4
+int main()
+{
+	int a[N],X,i=0,sum=0,z,m;
+	scanf("%d",&X);
+	for(m=2;m<X;m++)
+	{
+		i=0;sum=0;z=m;
+	for(i=0;m!=0;i++)
+	{
+		a[i]=m%10;
+		m=m/10;
+ 	sum+=a[i]*a[i]*a[i];
+	}
+	m=z;
+	if(z==sum)
+	printf("%5d",z);
+	}
+	printf("\n");
+	return 0;
+}

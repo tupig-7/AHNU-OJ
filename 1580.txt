@@ -1,0 +1,41 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+	char str1[6],str2[3];
+	char temp[3];
+	int i=0,j=0;
+	int HH,MM;
+	cin>>str1>>str2;
+	for(i=strlen(str1)-4;i>=0;i--)
+	temp[j++]=str1[i];
+	HH=(temp[j-1]-'0');
+	for(j=j-2;j>=0;j--)
+	HH=HH*10+(temp[j]-'0');
+	MM=(str1[strlen(str1)-1]-'0')+(str1[strlen(str1)-2]-'0')*10;
+	if(strcmp(str2,"PM")==0&&HH<12||(strcmp(str2,"AM")==0&&HH>=12))
+	{
+	if((HH+12)%24<10&&MM>=10)
+	cout<<"0"<<(HH+12)%24<<MM<<" hours"<<endl;
+	else if((HH+12)%24>=10&&MM<10)
+	cout<<(HH+12)%24<<"0"<<MM<<" hours"<<endl;
+	else if((HH+12)%24<10&&MM<10)
+	cout<<"0"<<(HH+12)%24<<"0"<<MM<<" hours"<<endl;
+	else
+	cout<<(HH+12)%24<<MM<<" hours"<<endl;
+	}
+	else 
+	{
+	if(HH<10&&MM>=10)
+	cout<<"0"<<HH<<MM<<" hours"<<endl;
+	else if(HH>=10&&MM<10)
+	cout<<HH<<"0"<<MM<<" hours"<<endl;
+	else if(HH<10&&MM<10)
+	cout<<"0"<<HH<<"0"<<MM<<" hours"<<endl;
+	else
+	cout<<HH<<MM<<" hours"<<endl;
+	
+	}
+	return 0;
+ }

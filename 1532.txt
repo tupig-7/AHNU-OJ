@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+int zhi(int a,int b)
+{
+	int r=1;
+	while(r!=0)  
+    {  
+        r=a%b;  
+        a=b;  
+        b=r;  
+    }  
+    return a;
+}
+int main()
+{
+	double A,B,L;
+	double min=10000,t;
+	int a,b;
+	int mina=0,minb=0;
+	cin>>A>>B>>L;
+	for(a=1;a<=L;a++)
+	for(b=1;b<=L;b++)
+	{
+		if(zhi(a,b)==1&&(a*1.0/b-(A/B))>=0)
+		{
+			t=a*1.0/b-(A/B);
+			//cout<<a<<" "<<b<<" "<<t<<" "<<min<<endl;
+			if(min>t)
+			{
+				mina=a;
+				minb=b;
+				min=t;
+			}
+			
+		}
+	}
+	cout<<mina<<" "<<minb<<endl;
+	return 0;
+ } 

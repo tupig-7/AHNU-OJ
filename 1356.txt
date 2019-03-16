@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+int main()
+{
+	int m=0,n=0,i=0,j=0,k=0,s=0,t=0,flag=0,count=0;
+	char str2[10001],str[1000][1000];
+	gets(str2);
+	for(i=0;str2[i]!='*';i++)
+	{
+		if((str2[i]>='a'&&str2[i]<='z')||(str2[i]>='A'&&str2[i]<='Z')||(str2[i]>='0'&&str2[i]<='9'))
+		{
+			str[k][j++]=str2[i];
+			continue;
+		}
+		str[k][j]='\0';
+	//	printf("%s\n",str[k]);
+		j=0;
+		k++;
+	}
+	str[k][j]='\0';
+	k++;
+		//printf("%s\n",str[k]);
+	for(i=0;i<k;i++)
+	{
+		flag=1;
+		m=strlen(str[i]);
+		if(m>0)
+		{	
+		for(s=0,t=m-1;s<t;s++,t--)
+		{
+			if(str[i][s]!=str[i][t])
+				flag=0;
+		}
+		if(flag==1)
+			count++;
+			if(flag==1&&count>1)
+				printf(" %s",str[i]);
+			else if(flag==1&&count==1)
+				printf("%s",str[i]);
+		}
+	}
+		return 0;
+}

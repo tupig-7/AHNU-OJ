@@ -1,0 +1,26 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+using namespace std;
+void reverse(char str[],int size);
+int main()
+{
+	char str[10000];
+	gets(str);
+	reverse(str,strlen(str));
+	puts(str);
+ 	return 0;
+}
+void reverse(char str[],int size)
+{
+	int i=0,j=size-1;
+	char temp;
+	while(i<=j)
+	{
+		temp=str[i];
+		str[i]=str[j];
+		str[j]=temp;
+		i++;
+		j--;
+	}
+	}

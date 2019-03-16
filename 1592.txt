@@ -1,0 +1,19 @@
+#include<stdio.h>
+#define N 7
+int main()
+{
+    char str1[N]={0},str2[N]={0};
+    int i,temp1=1,temp2=1;
+    gets(str1);
+    gets(str2);
+    for(i=0;i<=5;i++)
+    {
+    temp1*=(str1[i]-'A'+1);
+     temp2*=(str2[i]-'A'+1);
+    }
+     if(temp1%47==temp2%47)
+     printf("GO");
+     else
+     printf("STAY");
+     return 0;
+}

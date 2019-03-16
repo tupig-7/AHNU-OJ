@@ -1,0 +1,51 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+const int MAX=1001;
+int N,K;
+int G[MAX],W[MAX];
+int dp[MAX][MAX];
+double t[MAX],s[MAX];
+void solve()
+{
+	for(int i=0;i<K;i++)
+	{
+	t[i]=W[i]/G[i];
+	s[i]=i;
+	}	
+	for(int i=0;i<K;i++)
+	for(int j=i;j<K;j++)
+	{
+		if(t[i]<t[j]){
+			double temp=t[i];
+			t[i]=t[j];
+			t[j]=temp;
+			int tmp=s[i];
+			s[i]=s[j];
+			s[j]=tmp;
+		}
+	}
+	int sum=0;
+	int i;
+	do{
+		for(i=0;i<K;i++)
+		if(N-G[i]>=0)
+		{
+			sum+=W[i];
+			N-=G[i];
+			break;
+		}
+	}while(i!=K);
+	cout<<sum<<endl;
+}
+int main()
+{
+	int i,j;
+	while(cin>>N>>K)
+	{
+	for(i=0;i<K;i++)
+	cin>>G[i]>>W[i];
+	solve();
+	}
+	return 0;
+}

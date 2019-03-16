@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<string.h>
+#define N 100
+int main()
+{
+	int n,i=0,x,j,k,m,chang1,chang2;
+	char a[N],b[N],ch;
+	scanf("%d%c",&n,&ch);
+	for(j=1;j<=n;j++)
+	{ 
+		gets(a);
+		chang1=strlen(a);
+		gets(b);
+		chang2=strlen(b);
+        for(i=0;i<chang1;i++)
+			if(a[i]==32)
+			{
+				for(m=i;m<chang1;m++)
+				a[m]=a[m+1];
+				i--;
+			}
+		for(k=0;k<chang2;k++)
+			if(b[k]==32)
+			{
+				for(m=k;m<chang2;m++)
+				b[m]=b[m+1];
+				k--;
+			}
+    x=stricmp(a,b);
+		if(x==0)
+			printf("YES\n");
+		else
+			printf("NO\n");
+		scanf("%c",&ch);
+	}
+	return 0;
+}

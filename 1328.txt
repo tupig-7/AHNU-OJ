@@ -1,0 +1,28 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	int sh,sm,eh,em,sum;
+	cin>>sh>>sm;
+	cin>>eh>>em;
+	
+	if(sh>=18&&sh<=23&&eh>=18&&eh<=23&&sm>=0&&sm<=59&&em>=0&&em<=59&&sh<=eh)
+	{
+		if(sh==eh&&sm>em)
+		cout<<"0";
+		else
+		{
+			if(eh<21)
+			cout<<(ceil)(((eh*60+em)-(sh*60+sm))/60.0)*2;
+			else if(sh>=21)
+			cout<<(ceil)(((eh*60+em)-(sh*60+sm))/60.0)*4;
+			else
+			cout<<(ceil)(((21*60)-(sh*60+sm))/60.0)*2+(ceil)(((eh*60+em)-(21*60))/60.0)*4;
+		}
+	}
+	else
+	cout<<"0";
+ 	return 0;
+}
+	

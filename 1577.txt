@@ -1,0 +1,51 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+using namespace std;
+char temp[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+void add(char a[],char b[]);
+int main()
+{
+	int n,i,flag=1;
+	char res[2200],ch;
+	char str[2000+1];
+	memset(res,'0',sizeof(res));
+	scanf("%d%c",&n,&ch);
+	while(n--)
+	{
+		gets(str);
+		add(res,str);
+	}
+	for(i=0;i<2200-1;i++)
+	{
+		
+	if(res[i]!='0'||i==2200-2)
+	 flag=0;
+	 if(flag==0)
+	 cout<<res[i];
+}
+	return 0;
+	
+}
+void add(char a[],char b[])
+{
+	int length=strlen(b);
+	int j=2198;
+	int i=0,k=0,k1=0,k2=0;
+	for(i=length-1;i>=0;i--)
+	{
+		for(k=0;k<=16;k++)
+		if(temp[k]==a[j-1])
+		break;
+		for(k1=0;k1<=16;k1++)
+		if(temp[k1]==a[j])
+		break;//?????????????? 
+		for(k2=0;k2<=16;k2++)
+		if(temp[k2]==b[i])
+		break;//?????????????? 
+		a[j]=temp[(k1+k2)%16];
+		a[j-1]=temp[k+(k1+k2)/16];
+//	cout<<b[i]<<" "<<a[j];
+	j--;
+	}
+}

@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int m[]={0,1,2,3,5,10,20};
+
+int main()
+{
+    int n[7],t;
+    int p[7];
+    while(cin>>n[1]>>n[2]>>n[3]>>n[4]>>n[5]>>n[6])
+    {
+        int f[1005]={0};
+        for(p[1]=0;p[1]<=n[1];p[1]++)
+            for(p[2]=0;p[2]<=n[2];p[2]++)
+                for(p[3]=0;p[3]<=n[3];p[3]++)
+                    for(p[4]=0;p[4]<=n[4];p[4]++)
+                        for(p[5]=0;p[5]<=n[5];p[5]++)
+                            for(p[6]=0;p[6]<=n[6];p[6]++)
+                            {
+                              t=p[1]*m[1]+p[2]*m[2]+p[3]*m[3]+p[4]*m[4]+p[5]*m[5]+p[6]*m[6];
+                                f[t]=1;
+                            }
+        int count=0;
+        for(int i=1;i<=1000;i++)
+            if(f[i]) count++;
+        cout<<count<<endl;
+    }
+    return 0;
+}

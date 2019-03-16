@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+    double a,sum;
+    scanf("%lf",&a);
+    if(a<=3)
+    sum=8;
+    else
+    sum=8+(a-3)*1.5;
+	printf("%.1f",sum);
+	return 0;
+}

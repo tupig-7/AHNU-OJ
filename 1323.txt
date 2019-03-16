@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+    int a,b,c,d,e,f,g,h,i,j;
+    scanf("%d%d",&a,&b);
+    scanf("%d%d",&c,&d);
+	scanf("%d%d",&e,&f);
+	g=a-c;h=b-d;
+	i=c-e;j=d-f;
+	if(g*j-h*i==0)
+		printf("YES\n");
+	else
+		printf("NO\n");
+	return 0;
+}

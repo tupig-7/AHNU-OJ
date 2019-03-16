@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+    char ch;
+    int letter,number,other;
+    ch=getchar();
+   if(ch>=65&&ch<=90||ch>=97&&ch<=122)
+   printf("letter");
+    else if(ch>=48&&ch<=57)
+    printf("number");
+    else
+    printf("other");
+    return 0;
+}

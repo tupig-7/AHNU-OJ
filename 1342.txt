@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	char str[1000];
+	int i,k=0,max=0,a[1000]={0};
+	gets(str);
+	for(i=0;str[i]!='.';i++)
+	{
+	if(str[i]!=' ')
+	a[k]++;
+	else if(str[i]==' ')
+	k++;
+	}
+	for(i=0;i<=k;i++)
+	max=max>a[i]?max:a[i];
+	printf("%d\n",max);
+	return 0;
+}
+	

@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+    int m,n,r,t;
+    scanf("%d%d",&m,&n);
+    t=m*n;
+    do
+    {r=m%n;
+     m=n;
+     n=r;
+    }while(r!=0);
+	printf("%d %d\n",m,t/m);
+	return 0;
+}

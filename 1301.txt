@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+class BASE { 
+public: void virtual who( ) { cout<<"BASE\n";} 
+}; 
+class FIRST_D:public BASE { 
+public: void who( ) { cout<<"First Derivation\n";} 
+}; 
+class SECOND_D:public BASE { 
+public: void who( ) { cout<<"Second Derivation\n";} 
+}; int main( ) 
+{ BASE b_obj; FIRST_D f_obj; SECOND_D s_obj; 
+BASE *p; 
+p = &b_obj; p->who(); 
+p = &f_obj; p->who(); 
+p = &s_obj; p->who(); 
+return 0;
+} 
+
+
+
+ 

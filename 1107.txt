@@ -1,0 +1,18 @@
+#include<stdio.h>
+#define N 1000
+int main()
+{
+	int a[N],n,m,i,j,k=0;
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
+    {
+    	k=0;
+    	scanf("%d",&m);
+		for(j=0;j<m;j++)
+	{	scanf("%d",&a[j]);
+		k+=a[j];
+	}
+	printf("%d \n",k);
+	}
+	return 0;
+}

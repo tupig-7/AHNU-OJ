@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+int f(int n,int x)
+{
+	int i=0;
+	int sum=1;
+	for(i=n;i>n-x;i--)
+	sum*=i;
+	return sum;
+}//????N????x?????????? 
+int main()
+{
+	int a[3];
+	int i=1,j=1;
+	int n;
+	long sum=0;
+	cin>>a[0]>>a[1]>>a[2];
+	for(i=0;i<3;i++)
+	{
+		sum=0;
+		sum+=a[i]-1+f(a[i]-1,a[i]-1)*(a[i]-1);//f(a[i]-1,1)????a[i]-1??????
+		for(j=2;j<a[i];j++)
+		{
+			sum+=f(a[i]-1,j-1)*(j-1)+f(a[i]-1,j);
+		 } 
+		cout<<sum<<" ";
+	}
+	return 0;
+ } 

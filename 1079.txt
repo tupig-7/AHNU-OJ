@@ -1,0 +1,23 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	char str1[8],str2[8],str3[8],str4[8],strtemp[8];
+	cin>>str1>>str2>>str3>>str4;
+	if(strcmp(str1,str2)>0)
+	{strcpy(strtemp,str1);strcpy(str1,str2);strcpy(str2,strtemp);}
+	if(strcmp(str1,str3)>0)
+	{strcpy(strtemp,str1);strcpy(str1,str3);strcpy(str3,strtemp);}
+	if(strcmp(str1,str4)>0)
+	{strcpy(strtemp,str1);strcpy(str1,str4);strcpy(str4,strtemp);}
+	if(strcmp(str2,str3)>0)
+	{strcpy(strtemp,str2);strcpy(str2,str3);strcpy(str3,strtemp);}
+	if(strcmp(str2,str4)>0)
+	{strcpy(strtemp,str2);strcpy(str2,str4);strcpy(str4,strtemp);}
+	if(strcmp(str3,str4)>0)
+	{strcpy(strtemp,str3);strcpy(str3,str4);strcpy(str4,strtemp);}
+	cout<<str1<<" "<<str2<<" "<<str3<<" "<<str4<<endl;
+	return 0;
+}
+

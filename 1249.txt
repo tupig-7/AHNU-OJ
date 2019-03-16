@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class Rectangle{
+	private:
+	int itsLength;
+	int itsWidth;
+	public:
+	Rectangle(){
+		itsWidth=1;
+		itsLength=2;
+	}
+	Rectangle(int width,int length)
+	{
+		itsLength=length;
+		itsWidth=width;
+	}
+	int GetArea(){
+		return itsLength*itsWidth;
+	}
+	int GetCirCumference(){
+		return (itsLength+itsWidth)*2;
+	}
+};
+int main()
+{
+	int l,w;
+	Rectangle a;
+	cin>>l>>w;
+	Rectangle b(w,l);
+	cout<<"The default Area of Rectangle is:"<<a.GetArea()<<endl;
+	cout<<"The length is "<<l<<" width is "<<w<<" So the area is:"<<b.GetArea()<<endl;
+	return 0;
+}

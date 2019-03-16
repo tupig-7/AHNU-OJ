@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+    int a,b,i;
+    for(i=1;i<=100000;i++)
+   {  a=1,b=1;
+     for(a=1;a<i;a++)
+      if(a*a==i+100)
+    {   for(b=1;b<i;b++)
+        if(b*b==i+268)
+      printf("%d\n",i);
+    }
+   }
+	return 0;
+}

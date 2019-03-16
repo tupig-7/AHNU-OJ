@@ -1,0 +1,84 @@
+#include <cstdio>
+long long int num[100005];
+char sign[100005], temp[4];
+int lv[100005], signlv[260];
+int topn, tops;
+long long int number;
+long long int f(char s) {
+	switch (s) {
+	case '+':
+		return (num[topn] + num[topn + 1]) % 10000;
+	case '*':
+		return (num[topn] * num[topn + 1]) % 10000;
+	default:
+		return -1;
+	}
+	return -1;
+}
+void init() {
+	lv[0] = -1;
+	signlv['+'] = 1;
+	signlv['*'] = 2;
+	return ;
+}
+void solve() {
+	char tt;
+	while ((tt = getchar()) != '\n') {
+		switch (tt) {
+		case '+':
+		case '*': {
+			num[++topn] = number;
+			number = 0;
+			if (lv[tops] < signlv[tt])
+				++tops;
+			else
+				num[--topn] = f(sign[tops]);
+			sign[tops] = tt;
+			lv[tops] = signlv[tt];
+			break;
+		}
+		default: {
+			number = number * 10 + tt - '0';
+			break;
+		}
+		}
+	}
+	num[++topn]= number;
+	while (tops)
+		num[--topn] = f(sign[tops--]);
+	return ;
+}
+void output() {
+	bool flag = false;
+	temp[0] = num[1] % 10;
+	temp[1] = (num[1] /= 10) % 10;
+	temp[2] = (num[1] /= 10) % 10;
+	temp[3] = (num[1] /= 10) % 10;
+	if (!temp[0] && !temp[1] && !temp[2] && !temp[3]) {
+		putchar('0');
+		putchar('\n');
+		return ;
+	}
+	if (temp[3] || flag) {
+		putchar(temp[3] + '0');
+		flag = true;
+	}
+	if (temp[2] || flag) {
+		putchar(temp[2] + '0');
+		flag = true;
+	}
+	if (temp[1] || flag) {
+		putchar(temp[1] + '0');
+		flag = true;
+	}
+	if (temp[0] || flag)
+		putchar(temp[0] + '0');
+	putchar('\n');
+	return ;
+}
+int main() {
+	init();
+	solve();
+	output();
+	return 0;
+}

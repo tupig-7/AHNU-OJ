@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+const int MAX_N = 1000+1;
+string s[MAX_N];
+int n=0;
+int main()
+{
+	while(cin>>s[n])
+	n++;
+	for(int i=0;i<n;i++)
+	  for(int j=1;j<=s[i].size();j++){
+	  	string temp=s[i].substr(0,j);
+	  	bool f=false;
+	  	for(int k=0;k<n;k++)
+		  if(i!=k){
+		  	if(s[k].substr(0,j)==temp){
+		  		f=true;
+		  		break;
+			  }
+		  }
+		  if(!f){
+		  	cout<<s[i]<<" "<<temp<<endl;
+		  	break;
+		  }
+		  if(j==s[i].size())
+		  cout<<s[i]<<" "<<s[i]<<endl;
+	  }
+	  return 0;
+ } 

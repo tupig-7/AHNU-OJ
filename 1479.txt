@@ -1,0 +1,20 @@
+#include "stdio.h" 
+#include<string.h>
+void fun(char p1[], char p2[]) 
+{ 
+  int x,i,y;
+  x=strlen(p1);
+  y=strlen(p2);
+  for(i=0;i<y;i++)
+	  p1[x++]=p2[i];
+  p1[x]='\0';
+
+} 
+main() 
+{ char s1[80], s2[40] ; 
+scanf("%s%s", s1, s2) ; 
+fun(s1, s2) ; 
+printf("%s\n", s1) ; 
+return 0;
+} 
+

@@ -1,0 +1,32 @@
+#include <iostream>  
+#include <cstdio>  
+#include <cstring>  
+using namespace std;  
+int main()  
+{  
+    int i,j;  
+    char s[35];  
+    int temp,flag=0;//????none  
+    while(cin>>s&&strcmp(s,"-1")!=0)
+    {
+    	flag=0;
+    for(j=2;j<=9;j++){  
+        temp=0;  
+        for(i=0;i<strlen(s);i++){  
+            if(s[i]-'0'+temp>=j)  
+                temp=((s[i]-'0'+temp)%j)*10;  
+            else  
+                temp=(s[i]-'0')*10;  
+        }  
+        if(temp==0){  
+            cout<<j<<" ";  
+            flag=1;  
+        }  
+    }
+    if(!flag) 
+	 cout<<"none"<<endl;
+	 else
+	 cout<<endl;
+	}
+	return 0;
+}  

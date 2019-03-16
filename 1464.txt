@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+int a[92][8];
+int m=0;
+bool Place(int k,int i,int *x)
+{
+	int j;
+	for(j=0;j<k;j++)
+		if((x[j]==i)||(abs(x[j]-i)==abs(j-k)))
+			return false;
+	return true;
+}
+void NQueen(int k,int n,int *x)
+{
+	for(int i=0;i<n;i++)
+		if(Place(k,i,x)){
+			x[k]=i;
+			if(k==n-1){
+				for(i=0;i<n;i++)
+					a[m][i]=x[i];
+					m++;
+			}
+			else
+				NQueen(k+1,n,x);
+		}	
+}
+int main()
+{
+	int x[8];
+	int n,i,j;
+	cin>>n;
+	NQueen(0,n,x);
+	for(i=0;i<m/2;i++)
+	{
+		for(j=0;j<n;j++)
+			cout<<a[i][j]<<" ";
+		cout<<endl;
+	}
+	return 0;
+}

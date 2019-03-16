@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+int i,j,x,a[1000],n,k;
+scanf("%d",&n);
+for(k=1;k<=5;k++)
+{
+scanf("%d",&x);
+{
+for(i=0;;i++)
+{
+a[i]=x%n;
+x=x/n;
+if(x==0)
+break;
+}
+for(j=i;j>=0;j--)
+printf("%d",a[j]);
+}
+printf("\n");
+}
+return 0;
+}

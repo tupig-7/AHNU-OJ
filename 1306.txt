@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+  int a,b,integer;
+  scanf("%d%d",&a,&b);
+  integer=a+b;
+   printf("The sum is %d\n",integer);
+  return 0;
+}

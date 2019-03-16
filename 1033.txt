@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	char str[8],str1[7]="female";
+	double a,b,c,d,e,sum=0;
+	int n,i;
+	cin>>n;
+	for(i=0;i<n;i++)
+	{cin>>str;
+	cin>>a>>b>>c>>d>>e;
+	if(strcmp(str,str1)==0)
+	{
+		sum=0;
+		if(a<4||a>10)
+			sum++;
+		if(b<3.5||b>5.5)
+			sum++;
+		if(c<110||c>150)
+			sum++;
+		if(d<36||d>40)
+			sum++;
+		if(e<100||e>300)
+			sum++;
+		if(sum==0)
+			cout<<"normal"<<endl;
+		else
+			cout<<sum<<endl;
+	}
+	else
+	{
+		sum=0;
+		if(a<4||a>10)
+			sum++;
+		if(b<3.5||b>5.5)
+			sum++;
+		if(c<120||c>160)
+			sum++;
+		if(d<42||d>48)
+			sum++;
+		if(e<100||e>300)
+			sum++;
+		if(sum==0)
+			cout<<"normal"<<endl;
+		else
+			cout<<sum<<endl;
+	}
+	}
+			return 0;
+}
+/*
+2
+female 4.5 4.0 115 37 200
+male 3.9 3.5 155 36 301*/

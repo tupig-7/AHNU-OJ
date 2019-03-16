@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	int x,n,i,m,chicken,rabbit,k;
+	scanf("%d",&x);
+	for(i=1;i<=x;i++)
+	{
+		scanf("%d%d",&m,&n);
+		if(n%2!=0)
+		{
+		printf("No!\n");continue;}
+		k=n/2;
+		rabbit=k-m;
+		chicken=m-rabbit;
+		if(2*chicken+4*rabbit==n)
+		printf("%d,%d\n",rabbit,chicken);
+	}
+	return 0;
+}

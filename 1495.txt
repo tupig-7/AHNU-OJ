@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,a;
+	int st[10],t[100];
+	int i=0,j=0;
+	int sum=0;
+	int s=1;
+	cin>>n>>a;
+	do{
+		st[i++]=a%10;
+		a=a/10;
+	}while(a!=0);
+	for(j=i-1;j>=0;j--)
+	sum=sum*n+st[j];
+	for(i=sum;i>=1;i--)
+	s*=i;
+	do{
+		t[i++]=s%n;
+		s=s/n;
+	}while(s>0);
+	for(j=i-1;j>=0;j--)
+	cout<<t[j];
+	return 0;	
+}

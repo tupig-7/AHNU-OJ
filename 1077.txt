@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	char str[80];
+	int i,flag=1;
+	gets(str);
+	for(i=0;str[i]!='\0';i++)
+	{
+	if(str[i]<='Z'&&str[i]>='A'||str[i]==' ')
+	continue;
+	flag=0;
+	}
+	if(flag==0)
+	printf("NO");
+	else
+	printf("YES");
+	return 0;
+}

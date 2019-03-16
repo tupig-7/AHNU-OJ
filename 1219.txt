@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+#define N 200
+int main()
+{
+	int n,i,j,k,m=0,x;
+	char str[N],ch;
+	gets(str);
+	n=strlen(str);
+	for(j=0;j<n-m;j++)
+	{
+		for(i=j+1;i<n-m;i++)
+		if(str[j]==str[i])
+		{
+
+			for(k=i;k<n-m;k++)
+				str[k]=str[k+1];
+	        	m++;
+	        	i--;}
+	}
+    	for(i=0;i<n-1-m;i++)
+			for(x=0;x<n-m-1-i;x++)
+              if(str[x]>str[x+1])
+			  {ch=str[x];str[x]=str[x+1];str[x+1]=ch;}
+			for(i=0;i<n-m;i++)
+			printf("%c",str[i]);
+			printf("\0");
+			printf("\n");
+			return 0;
+}

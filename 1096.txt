@@ -1,0 +1,44 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+const int MAX_N = 100;
+int N,m,S[MAX_N],T[MAX_N];
+pair<int,int> itv[MAX_N];
+void solve()
+{
+	//??pair??????????????????????????????????????????
+	int i;
+	for(i=0;i<N;i++)
+	{
+		itv[i].first=T[i];
+		itv[i].second=S[i];
+	 } 
+	 sort(itv,itv+N);
+	 int ans=0,t=0;
+	 for(i=0;i<N;i++)
+	 if(t<itv[i].second)
+	 {
+	 	ans++;
+	 	t=itv[i].first;
+	 }
+	 if(ans>=m)
+	 cout<<"yes"<<endl;
+	 else
+	 cout<<"no"<<endl;
+ } 
+int main()
+{
+	cin>>N>>m;
+	int i,j;
+	char ch;
+	int sh[MAX_N],sm[MAX_N],eh[MAX_N],em[MAX_N];
+	for(i=0;i<N;i++)
+	{
+	cin>>sh[i]>>ch>>sm[i]>>eh[i]>>ch>>em[i]; 
+	S[i]=sh[i]*100+sm[i];
+	T[i]=eh[i]*100+em[i];
+}
+	solve();
+	return 0;
+	
+ } 

@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int c[200]={0},i=0,j=0,k,max,min,m,n,x,l=0;
+	char  a[200],b[200];
+    scanf("%s",a);
+	scanf("%s",b);
+	m=strlen(a);
+	n=strlen(b);
+	for(x=m;x<200;x++)
+		a[x]='0';
+	for(x=n;x<200;x++)
+		b[x]='0';
+	max=m>n?m:n;
+	min=m<n?m:n;
+	m--;
+	n--;
+    for(k=min-1;k>=0;l++,k--)
+	  {
+		c[l]=c[l]+(a[m--]-48)+(b[n--]-48);
+		  if(c[l]>9)
+		  {
+			  c[l+1]=c[l]/10;
+			   c[l]=c[l]-10;
+		  }
+	  }
+	if(m>n)
+	for(x=max-min-1;x>=0;x--,l++)
+		c[l]=c[l]+a[x]-48;
+	   else if(m<n)
+   for(x=max-min-1;x>=0;x--,l++)
+		c[l]=c[l]+b[x]-48;
+	if((a[0]-48)+(b[0]-48)>9&&m==n)
+		j=max;
+	else 
+		j=max-1;
+	for(;j>=0;j--)
+	printf("%d",c[j]);
+	printf("\n");
+	return 0;
+}

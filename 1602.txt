@@ -1,0 +1,106 @@
+#include<stdio.h>
+#include<string.h>
+#define N 100
+int main()
+{
+	int a[26]={0},count=0;
+	char c[N],b[N],ch1,ch2;
+	char stp[27]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    int j,k,m,n,max,min;
+	gets(c);
+	m=strlen(c);
+	gets(b);
+	n=strlen(b);
+		for(j=0;j<m;j++)
+		{
+		switch(c[j])
+		{
+			case 'a':  a[0]++;break;
+			case 'b':  a[1]++;break;
+			case 'c':  a[2]++;break;
+			case 'd':  a[3]++;break;
+			case 'e':  a[4]++;break;
+			case 'f':  a[5]++;break;
+			case 'g':  a[6]++;break;	
+	    	case 'h':  a[7]++;break;
+			case 'i':  a[8]++;break;
+			case 'j':  a[9]++;break;
+			case 'k':  a[10]++;break;
+			case 'l':  a[11]++;break;
+			case 'm':  a[12]++;break;
+			case 'n':  a[13]++;break;
+			case 'o':  a[14]++;break;
+			case 'p':  a[15]++;break;
+			case 'q':  a[16]++;break;
+			case 'r':  a[17]++;break;
+			case 's':  a[18]++;break;
+			case 't':  a[19]++;break;
+			case 'u':  a[20]++;break;
+			case 'v':  a[21]++;break;
+			case 'w':  a[22]++;break;
+			case 'x':  a[23]++;break;
+			case 'y':  a[24]++;break;
+			case 'z':  a[25]++;break;
+		}
+		}
+		min=a[0];
+		for(k=1;k<26;k++)
+			if(min>a[k]&&a[k]!=0)
+	    {	min=a[k];
+	    count=k;}
+		ch1=stp[count];
+
+		count=0;
+		for(j=0;j<26;j++)
+			a[j]=0;
+		for(j=0;j<n;j++)
+		{
+		switch(b[j])
+		{
+			case 'a':  a[0]++;break;
+			case 'b':  a[1]++;break;
+			case 'c':  a[2]++;break;
+			case 'd':  a[3]++;break;
+			case 'e':  a[4]++;break;
+			case 'f':  a[5]++;break;
+			case 'g':  a[6]++;break;	
+	    	case 'h':  a[7]++;break;
+			case 'i':  a[8]++;break;
+			case 'j':  a[9]++;break;
+			case 'k':  a[10]++;break;
+			case 'l':  a[11]++;break;
+			case 'm':  a[12]++;break;
+			case 'n':  a[13]++;break;
+			case 'o':  a[14]++;break;
+			case 'p':  a[15]++;break;
+			case 'q':  a[16]++;break;
+			case 'r':  a[17]++;break;
+			case 's':  a[18]++;break;
+			case 't':  a[19]++;break;
+			case 'u':  a[20]++;break;
+			case 'v':  a[21]++;break;
+			case 'w':  a[22]++;break;
+			case 'x':  a[23]++;break;
+			case 'y':  a[24]++;break;
+			case 'z':  a[25]++;break;
+		}
+		}
+		max=a[0];
+		for(k=1;k<26;k++)
+		if(max<a[k])
+	    {	max=a[k];
+	    count=k;}
+	  ch2=stp[count];
+
+	for(j=0;j<m;j++)
+		if(c[j]==ch1)
+			c[j]=ch2;
+    for(j=0;j<n;j++)
+		if(b[j]==ch2)
+			b[j]=ch1;
+		puts(c);
+		puts(b);
+	//	printf("%c%c",ch1,ch2);
+		return 0;
+}
+

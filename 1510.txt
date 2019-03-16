@@ -1,0 +1,106 @@
+#include<stdio.h>
+int gy(int x,int y);
+int main()
+{
+	int a,b,c,d,temp1,temp2,z;
+	char ch1,ch2,ch3,tempch1,tempch2;
+	scanf("%d%c%d%c%c%c%d%c%d",&a,&ch1,&b,&tempch1,&ch2,&tempch2,&c,&ch3,&d);
+	switch(ch2)
+	{
+		case '+':if(b==0||d==0)
+					printf("error\n");
+					else
+					{
+					temp1=a*d+b*c;
+					temp2=b*d;
+					z=gy(temp1,temp2);
+					
+				    temp1=temp1/z;
+				    temp2=temp2/z;
+					if(temp1%temp2!=0)
+					{
+						if(temp2>0)
+				    printf("%d/%d\n",temp1,temp2);
+				    else
+				     printf("%d/%d\n",-1*temp1,-1*temp2);
+				}
+					else
+					printf("%d",temp1/temp2);
+				}break;
+			case '-':if(b==0||d==0)
+						printf("error\n");
+						else
+						{
+						temp1=a*d-b*c;
+						temp2=b*d;
+						z=gy(temp1,temp2);
+						
+					    temp1=temp1/z;
+					    temp2=temp2/z;
+						if(temp1%temp2!=0)
+						{
+							if(temp2>0)
+					    printf("%d/%d\n",temp1,temp2);
+					    else
+					     printf("%d/%d\n",-1*temp1,-1*temp2);
+					}
+						else
+						printf("%d",temp1/temp2);
+					}break;
+					
+				case '*':
+						if(b==0||d==0)
+						printf("error\n");
+						else
+						{
+						temp1=a*c;
+						temp2=b*d;
+						z=gy(temp1,temp2);
+						
+					    temp1=temp1/z;
+					    temp2=temp2/z;
+						if(temp1%temp2!=0)
+						{
+							if(temp2>0)
+					    printf("%d/%d\n",temp1,temp2);
+					    else
+					     printf("%d/%d\n",-1*temp1,-1*temp2);
+					}
+						else
+						printf("%d",temp1/temp2);
+					}break;
+					case '/':
+							if(b==0||d==0||c==0)
+						printf("error\n");
+						else
+						{
+						temp1=a*d;
+						temp2=b*c;
+						z=gy(temp1,temp2);
+					    temp1=temp1/z;
+					    temp2=temp2/z;
+						if(temp1%temp2!=0)
+						{
+							if(temp2>0)
+					    printf("%d/%d\n",temp1,temp2);
+					    else
+					     printf("%d/%d\n",-1*temp1,-1*temp2);
+					}
+						else
+						printf("%d",temp1/temp2);
+					}break;
+	}
+	
+	return 0;
+}
+int gy(int x,int y)
+{
+	int r;
+	do
+	{
+     r=x%y;
+     x=y;
+     y=r;
+	}while(r!=0);
+	return x;
+}

@@ -1,0 +1,35 @@
+# include "stdio.h" 
+#define N 9 
+void fun(int a[], int n) 
+{ int i,j, max, min, px, pn, t; 
+for (i=0; i<=n-2; i+=2) 
+{ 
+/**********found**********/ 
+max = min = a[i]; 
+px = pn = i; 
+for (j=i+1; j<=n-2; j++) { 
+/**********found**********/ 
+if (max<a[j]) 
+{ max = a[j]; px = j; } 
+/**********found**********/ 
+if (min>a[j]) 
+{ min = a[j]; pn = j; } 
+} 
+if (pn != i) 
+{ t = a[i]; a[i] = min; a[pn] = t; 
+if (px == i) px =pn; 
+} 
+if (px != i+1) 
+{ t = a[i+1]; a[i+1] = max; a[px] = t; } 
+} 
+} 
+main() 
+{ int b[N]={9,1,4,2,3,6,5,8,7}, i; 
+printf("\nThe original data :\n"); 
+for (i=0; i<=N-1; i++) printf("%4d ", b[i]); 
+printf("\n"); 
+fun(b, N); 
+printf("\nThe data after moving :\n"); 
+for (i=0; i<=N-1; i++) printf("%4d ", b[i]); 
+printf("\n"); 
+}

@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{ 
+ double NS,MS,FS,sum; 
+ scanf("%lf%lf%lf",&NS,&MS,&FS);
+ sum=0.1*NS+0.2*MS+0.7*FS;
+ printf("%.1f\n",sum);
+  return 0;
+}

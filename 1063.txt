@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+    int n,i,a;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        scanf("%d",&a);
+        if(a%4==0&&a%100!=0||a%400==0)
+        printf("Y\n");
+        else
+        printf("N\n");
+    }
+	return 0;
+}

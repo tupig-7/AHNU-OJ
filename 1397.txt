@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main()
+{
+    int a1,d,n,sum;
+    scanf("%d%d%d",&a1,&n,&d);
+    sum=(a1+a1+(n-1)*d)*n/2;
+    printf("%d\n",sum);
+	return 0;
+}

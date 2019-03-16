@@ -1,0 +1,10 @@
+#include <stdio.h>
+#define PI 3.1415926
+int main()
+{
+    double r,h,V;
+    scanf("%lf%lf",&r,&h);
+    V=PI*r*r*h;
+	printf("%.2f",V);
+	return 0;
+}

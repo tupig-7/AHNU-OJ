@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[4],d;
+	int sum=0;
+	int i=1;
+	while(cin>>a[1]>>a[2]>>a[3]>>d&&a[1]!=-1&&a[2]!=-1&&a[3]!=-1&&d!=-1)
+	{
+		sum=0;
+		for(;;sum++)
+		if((sum-a[1])%23==0&&(sum-a[2])%28==0&&(sum-a[3])%33==0&&sum!=0)
+		break;
+		cout<<"Case "<<i<<": the next triple peak occurs in "<<sum-d<<" days."<<endl;
+		i++;
+	}
+ } 

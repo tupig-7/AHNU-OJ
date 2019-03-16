@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+    if(a>=50&&b>=50&&c>=50) 
+       printf("PASS");
+    else if(a>=50&&b>=50&&c>=40&&(a+b+c)/3>=50)
+    printf("PASS BY COMPENSATION\n");
+    else if(a>=50&&c>=50&&b>=40&&(a+b+c)/3>=50)
+    printf("PASS BY COMPENSATION\n");
+    else if(b>=50&&c>=50&&a>=40&&(a+b+c)/3>=50)
+    printf("PASS BY COMPENSATION\n");
+    else
+    printf("FAIL\n");
+	return 0;
+}

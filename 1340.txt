@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+    char ch;
+   ch=getchar();
+   while(ch!='\n')
+   {  
+	   if(ch!='(')
+		  putchar(ch);
+	   else
+	   {
+		   do
+		   {
+			   ch=getchar();
+		   }while(ch!=')');
+	   }
+       ch=getchar();
+   }      
+     putchar('\n');
+     return 0;
+ }

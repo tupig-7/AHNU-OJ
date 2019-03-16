@@ -1,0 +1,24 @@
+#include<stdio.h>
+#define N 100
+int main()
+{
+int i,j,a[N],n,k;
+__int64 x;
+char b[16]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+scanf("%d",&n);
+for(k=1;k<=n;k++)
+{
+scanf("%I64d",&x);
+for(i=0;;i++)
+{
+a[i]=x%16;
+x=x/16;
+if(x==0)
+break;
+}
+for(j=i;j>=0;j--)
+printf("%c",b[a[j]]);
+printf("\n");
+}
+return 0;
+}

@@ -1,0 +1,12 @@
+#include<stdio.h>
+#define PI 3.1415926
+int main()
+{ 
+ double D,cir,area; 
+ scanf("%lf",&D);
+ cir=PI*D;
+ area=PI*D*D/4;
+ printf("%.2f\n",cir);
+ printf("%.2f\n",area);
+  return 0;
+}

@@ -1,0 +1,29 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int Double(int a)
+{
+	return a*2;
+}
+long Double(long a)
+{
+	return a*2;
+}
+float Double(float a)
+{
+	return a*2;
+}
+double Double(double a)
+{
+	return a*2;
+}
+int main()
+{
+	int a;
+	long b;
+	float c;
+	double d;
+	cin>>a>>b>>c>>d;
+	cout<<Double(a)<<endl<<Double(b)<<endl<<setprecision(10)<<Double(c)<<endl<<setprecision(17)<<Double(d)<<endl;
+	return 0;
+}

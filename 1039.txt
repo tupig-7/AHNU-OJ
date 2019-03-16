@@ -1,0 +1,46 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int Hex(int x,int b);
+int main()
+{
+	int p,q,r,n,b;
+	long p2,q2,r2;
+	cin>>n;
+	while(n--)
+	{
+		cin>>p>>q>>r;
+		for(b=2;b<=16;b++)
+		{
+			p2=Hex(p,b);
+			q2=Hex(q,b);
+			r2=Hex(r,b);
+			if(p2==-1||q2==-1||r2==-1)
+			continue;
+			if(p2*q2==r2)
+			{
+			cout<<b<<endl;
+			break;
+		}
+		}
+		if(b==17)
+		cout<<"0"<<endl;
+	}
+	return 0;
+ }
+ int Hex(int x,int b)
+ {
+ 	char temp[100];
+ 	int ret=0,i;
+ 	sprintf(temp,"%d",x);
+ 	int length=strlen(temp);
+ 	for(i=0;i<length;i++)
+ 	{
+ 		if(temp[i]-'0'>=b)
+ 		return -1;
+ 		ret*=b;
+ 		ret+=temp[i]-'0';
+	 }
+	 return ret;
+ }
+ 

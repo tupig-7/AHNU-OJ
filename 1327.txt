@@ -1,0 +1,41 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+
+double getA(double s1,double t1,double s2,double t2,double s3,double t3)
+{
+	double a=sqrt((s1-s2)*(s1-s2)+(t1-t2)*(t1-t2));
+	double b=sqrt((s1-s3)*(s1-s3)+(t1-t3)*(t1-t3));
+	double c=sqrt((s3-s2)*(s3-s2)+(t3-t2)*(t3-t2));
+	double p=(a+b+c)/2;
+	double ara=sqrt(p*(p-a)*(p-b)*(p-c));
+	return ara;
+}
+int main()
+{
+	double x,y;
+	double x1,y1;
+	double x2,y2;
+	double x3,y3;
+	double a1,a2,a3,a4;
+	cin>>x>>y;
+	cin>>x1>>y1;
+	cin>>x2>>y2;
+	cin>>x3>>y3;
+	a1=getA(x,y,x1,y1,x2,y2);
+	a2=getA(x,y,x1,y1,x3,y3);
+	a3=getA(x,y,x3,y3,x2,y2);
+	a4=getA(x3,y3,x1,y1,x2,y2);
+	if(a1+a2+a3-a4<1e-5)
+	{
+		if(a1>0&&a2>0&&a3>0)
+		cout<<"In"<<endl;
+		else
+		cout<<"On"<<endl;
+	}
+		else
+		cout<<"Out"<<endl;
+		return 0;
+		
+} 

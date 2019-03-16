@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	int n;
+    double sum;
+    for(;;)
+	{	scanf("%d",&n);
+		if(n==-1)break;
+		else if(n<30000)
+		sum=0;
+	    if(n>=30000&&n<=50000)
+		sum=(n-30000)*0.05;
+		if(n>50000)
+		sum=1000+(n-50000)*0.1;
+		printf("%.3f\n",sum);
+	}
+	return 0;
+}

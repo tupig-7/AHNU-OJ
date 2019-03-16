@@ -1,0 +1,22 @@
+#include<stdio.h>
+#define N 7
+int main()
+{
+	double x,a[N],sum=0,temp;
+	int i,j;
+	scanf("%lf",&x);
+	for(i=0;i<7;i++)
+	{
+	scanf("%lf",&a[i]);
+	sum+=a[i];
+	}
+	for(i=0;i<7;i++)
+	for(j=0;j<6-i;j++)
+	if(a[j]<a[j+1])
+	{temp=a[j];
+	a[j]=a[j+1];
+	a[j+1]=temp;}
+	sum=(sum-a[0]-a[1]-a[5]-a[6])*x;
+	printf("%.2f\n",sum);
+	return 0;
+}

@@ -1,0 +1,9 @@
+#include <stdio.h>
+#define PI 3.141593
+int main()
+{
+    double wid;
+    wid=1/PI;
+	printf("%.2f\n",wid);
+	return 0;
+}

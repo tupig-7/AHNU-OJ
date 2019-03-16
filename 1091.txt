@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int a[100];
+	int i=0,j;
+	int m=1,n=0,sum=0;
+	while(cin>>a[i]){
+		i++;
+	}
+	for(j=0;j<=i;j++)
+	{
+		if(a[j]<a[j+1])
+		{
+			m++;
+		}
+		else
+		{
+			if(m>1)
+			sum++;
+			n=n>m?n:m;
+			m=1;
+		}
+	}
+	cout<<sum<<endl<<n-1<<endl;
+	return 0;
+}

@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+   int sum=0,grade,count=0;
+   scanf("%d",&grade);
+   while(grade>=0)
+   {
+    sum+=grade;
+    scanf("%d",&grade);
+    count++;
+   }
+   printf("%.1f\n",(double)sum/count);
+   return 0;
+}

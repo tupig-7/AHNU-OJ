@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	int n,i,j,min,max;
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
+	{
+		scanf("%d",&j);
+		if(j%2!=0)
+		printf("0 0\n");
+		else
+	{	max=j/2;
+		min=j/4+j%4/2;
+		printf("%d %d\n",min,max);}
+	}
+	return 0;
+}

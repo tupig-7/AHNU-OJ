@@ -1,0 +1,20 @@
+#include<cstdio>  
+#include<algorithm>  
+using namespace std;  
+int n,a[200001];  
+int main()  
+{  
+    scanf("%d",&n);  
+    for(int i=1;i<=n;i++)  
+        scanf("%d",&a[i]);  
+    sort(a+1,a+1+n);  
+    int tmp=1;  
+    for(int i=2;i<=n+1;i++){  
+        if(a[i-1]^a[i]){  //???????????? 
+            printf("%d %d\n",a[i-1],tmp);  
+            tmp=1;  
+        }  
+        else tmp++;  
+    }  
+    return 0; 
+}

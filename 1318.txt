@@ -1,0 +1,10 @@
+#include  <stdio.h>
+int main()
+{
+  int x,y,z,t;
+  scanf("%d%d%d",&x,&y,&z);
+  t=x>y?x:y;
+  t=t>z?t:z;
+  printf("%d\n",t);
+  return 0;
+}

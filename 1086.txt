@@ -1,0 +1,36 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+using namespace std;
+void delete_duplicates( char array[], int size );
+int main()
+{
+ 	char array[10000];
+	char ch;
+ 	int n;
+ 	cin>>n;
+	scanf("%c",&ch);
+ 	while(n>0)
+ 	{
+		gets(array);
+		cout<<"original size="<<strlen(array)<<endl;
+		delete_duplicates(array,strlen(array));
+		printf("reduced array=%s\n",array);
+		cout<<"reduced array size="<<strlen(array)<<endl;
+		n--;
+	 }
+ 	return 0;
+}
+void delete_duplicates( char array[], int size ){
+	 int i,j,k;
+	 int length=strlen(array);
+	 for(i=0;i<strlen(array);i++)
+	 for(j=i+1;j<strlen(array);j++)
+	 if(array[i]==array[j])
+	 {
+	 for(k=j;k<strlen(array)-1;k++)
+	 array[k]=array[k+1];
+	 array[strlen(array)-1]='\0';
+	 j--;
+	}
+}

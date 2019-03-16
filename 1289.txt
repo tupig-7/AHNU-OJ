@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	char str[200+1][10];
+	int N;
+	int M;
+	int i,j;
+	int count[200+1]={0};
+	char a[200+1][200+1];
+	int temp,index[200+1];
+	cin>>N;
+	for(i=0;i<N;i++)
+	index[i]=i;
+	for(i=0;i<N;i++)
+	cin>>str[i];
+	cin>>M;
+	for(i=0;i<M;i++)
+	cin>>a[i];
+	for(i=0;i<M;i++)
+	for(j=0;j<N;j++)
+	if(a[i][j]=='1')
+	count[j]++;
+	for(i=0;i<N-1;i++)
+	for(j=0;j<N-1-i;j++)
+	{
+		if(count[j]<count[j+1])
+		{
+			temp=count[j];
+			count[j]=count[j+1];
+			count[j+1]=temp;
+			temp=index[j];
+			index[j]=index[j+1];
+			index[j+1]=temp;
+		}
+	}
+	cout<<str[index[0]]<<endl<<str[index[1]]<<endl<<str[index[2]]<<endl;
+	return 0;
+}

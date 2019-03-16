@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+   int n,i,a,b,c;
+   scanf("%d",&n);
+   for(i=3;i<=n;i++)
+	for(a=2;a<=i;a++)
+	 for(b=a;b<=i;b++)
+	  for(c=b;c<=i;c++)
+	   if(i*i*i==a*a*a+b*b*b+c*c*c)
+	    printf("Cube = %d, Triple = (%d,%d,%d)\n",i,a,b,c);
+   return 0;
+}
+
+

@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+int ex(int x,int b[]);
+int ex2(int b[],int length);
+int main()
+{
+    int n ,a[1005],i=0,j,k,k1,y,length;
+    int b[100];
+    cin>>n;
+    while(n--)
+    {
+              cin>>a[i];
+
+              length=ex(a[i],b);
+              k=ex2(b,length);
+              for(y=a[i]+1;;y++)
+              {
+              length=ex(y,b);
+              k1=ex2(b,length);
+              if(k1==k)
+              break;
+
+              }
+              cout<<y<<endl;
+              }
+                return 0;
+                
+}
+int ex(int x,int b[])
+{
+     int i=0;
+     do
+     {
+         b[i++]=x%2;
+         x/=2;
+     } while(x>0);
+     return i;
+     
+ }
+ int ex2(int b[],int length)
+ {
+     int i,k=0;
+     for(i=0;i<length;i++)
+     if(b[i]==1)
+     k++;
+     return k;
+ }

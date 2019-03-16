@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+    int a,b,c,d,t;
+    scanf("%d",&a);
+    b=(a%10+7)%10;
+    c=((a-a%10)/10%10+7)%10;
+    d=(a/100+7)%10;
+    t=c,c=d,d=t;
+       a=d*100+c*10+b;
+	printf("%d",a);
+	return 0;
+}

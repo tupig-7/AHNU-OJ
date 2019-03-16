@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n;
+	int a,b;
+	int max=0;
+	int i=0;
+	int sum1=0,sum2=0,sum3=0;
+	cin>>n;
+	n--;
+	while(n--)
+	{
+		cin>>a>>b;
+		sum1+=a+b;
+		max=max>sum1?max:sum1;
+		sum2=sum1;
+		if(a<0)
+		sum3+=a;
+		if(b<0)
+		sum3+=b;
+	}
+	cout<<max<<endl<<sum2<<endl<<sum2-sum3<<endl;
+	return 0;
+ } 

@@ -1,0 +1,52 @@
+#include <stdio.h>  
+#include <stdlib.h>  
+  
+int LeapYear(int y)  
+{  
+    if ( y%4!=0 || (y%100==0 && y%400!=0) ) return 0;  
+    else return 1;  
+}  
+  
+int main(int argc, char *argv[])  
+{  
+  int n, i , l;  
+  int month[2][13] = {0,31,28,31,30,31,30,31,31,30,31,30,31,  
+                      0,31,29,31,30,31,30,31,31,30,31,30,31};  
+  int h, min, s, d, mon, y,  mh, mmin, ms, md, mmon, my;  
+  long days;  
+  long long int seconds;  
+    
+  scanf("%d",&n);  
+  while(n--)  
+  {  
+      scanf("%d:%d:%d %d.%d.%d",&h,&min,&s,&d,&mon,&y);  
+      days = 0 ;  
+      seconds =  0;  
+      l = LeapYear(y);  
+      days += (long)(d - 1) ;   
+      for( i = 2000 ; i<y ; i++ )  
+          if(LeapYear(i)==0) days += 365 ;  
+          else days += 366 ;  
+      for( i = 0 ; i<=(mon-1) ; i++ )  
+          days += (long)month[l][i] ;  
+      seconds =(long long)days*86400 ;  
+      seconds += h*3600 + min*60 + s;  
+      seconds = seconds*1000 ;  
+      seconds = seconds/864 ;  
+      ms = seconds%100 ;  
+      seconds = seconds/100 ;  
+      mmin = seconds%100 ;  
+      seconds = seconds/100;  
+      mh = seconds%10 ;  
+      seconds = seconds/10 ;  
+      md = seconds%100 ;   
+      md++ ;  
+      seconds = seconds/100;  
+      mmon = seconds%10;  
+      mmon++ ;  
+      seconds = seconds/10;  
+      my = seconds;  
+      printf("%d:%d:%d %d.%d.%d\n",mh,mmin,ms,md,mmon,my);  
+  }    
+  return 0;  
+}  

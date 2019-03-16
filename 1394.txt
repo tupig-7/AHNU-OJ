@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cstring>
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int T;
+    char num[10000];
+    cin>>T;
+    while(T--)
+    {
+       int i=0,len;
+       cin>>num;
+       while(num[i]=='0'&&num[i+1]!='.') i++;
+       len = strlen(num);
+       if(i==len)
+       {
+          cout<<"0"<<endl;
+       }
+       else
+       {
+          for(; i<len&&num[i+1]!='.'; i++)
+            cout<<num[i];
+          if(num[i+1]=='.')
+          {
+             if(num[i+2]<'5')
+             cout<<num[i]<<endl;
+             else if(num[i]<'9')
+             printf("%c\n",num[i]+1);
+             else
+             cout<<num[i]<<endl;
+          }
+          else 
+          cout<<endl;
+       }
+    }
+    return 0;
+}

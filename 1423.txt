@@ -1,0 +1,36 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int a,b;
+	int x[100]={0},y[100]={0};
+	int i=0;
+	int flag=0;
+	cin>>a>>b;
+	if(a==b)
+		cout<<a<<endl;
+	else
+	{
+	x[i++]=a;
+	do
+	{
+		a=(a-a%2)/2;
+		x[i++]=a;
+	}while(a!=0);
+	sort(x,x+i-1);
+	i=0;
+	y[i++]=b;
+	do
+	{
+		b=(b-b%2)/2;
+		y[i++]=b;
+	}while(b!=0);
+	sort(y,y+i-1);
+	for(i=0;;i++)
+		if(x[i]!=y[i])
+			break;
+		cout<<x[i-1]<<endl;
+	}
+	return 0;
+}

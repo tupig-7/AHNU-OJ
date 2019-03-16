@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{ 
+  int a,b,c,d;
+  double l;
+  scanf("%d,%d",&a,&b);
+  scanf("%d,%d",&c,&d);
+  l=(double)sqrt((a-c)*(a-c)+(b-d)*(b-d));
+  printf("%.1f\n",l);
+  return 0;
+}

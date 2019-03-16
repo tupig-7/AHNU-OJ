@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    int i,N,MAX=-1,a;
+    double average,temp=0;
+    scanf("%d",&N);
+    for(i=1;i<=N;i++)
+    {
+        scanf("%d",&a);
+        MAX=MAX>a?MAX:a;
+        temp+=a;
+    }
+    average=temp/N;
+    printf("%d %.1f",MAX,average);
+    return 0;
+}

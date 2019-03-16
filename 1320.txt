@@ -1,0 +1,11 @@
+#include  <stdio.h>
+#include <math.h>
+int main()
+{
+	int a,b,c,t;
+	scanf("%d%d%d",&a,&b,&c);
+	t=abs(a)>=abs(b)?a:b;
+    t=abs(t)>=abs(c)?t:c;
+	printf("%d\n",t);
+    return 0;
+}

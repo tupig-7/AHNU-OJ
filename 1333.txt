@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+   int n;
+   double sum=0,tempa,i=1;
+   scanf("%d",&n);
+   while(i<=n)
+   {
+	   tempa=1/(2*i-1)-1/(2*i+1);
+	   sum=sum+tempa;
+       i++;
+   }
+    printf("%.4f\n",sum);
+   
+	return 0;
+}

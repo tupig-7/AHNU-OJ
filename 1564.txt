@@ -1,0 +1,23 @@
+#include<stdio.h>
+#define M 100
+#define N 100
+int main()
+{
+	int a[M][N],i,j,k,p,max;
+	scanf("%d%d",&k,&p);
+	for(i=0;i<k;i++)
+		for(j=0;j<p;j++)
+			scanf("%d",&a[i][j]);
+		max=a[0][0];
+      for(i=0;i<k;i++)
+		for(j=0;j<p;j++)
+			max=max>=a[i][j]?max:a[i][j];
+     for(i=0;i<k;i++)
+		for(j=0;j<p;j++)
+      if(max==a[i][j])
+	  { 
+		  printf("%d %d %d\n",max,i,j);
+         i=k,j=p;
+	  }
+	  return 0;
+}

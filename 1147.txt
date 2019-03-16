@@ -1,0 +1,84 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+typedef struct Node{
+	char data;
+	struct Node *next;
+}LNode,*LinkList;
+void InitList(LinkList &L, int n)
+{
+	int i;
+	LinkList s,r;
+	L=(LinkList)malloc(sizeof(LNode));
+	L->next=NULL;
+	r=L;
+	for(i=1;i<=n;i++)
+	{
+		s=(LinkList)malloc(sizeof(LNode));
+		cin>>s->data;
+		r->next=s;
+		r=s;
+	}
+	r->next=NULL;
+	
+}
+void DispList(LinkList L)
+{
+	int i=1;
+	LinkList p;
+	p=L->next; //???? p ????????
+	while(p) //????????????????????????
+	{
+		cout<<p->data;
+		p=p->next;
+	}
+	cout<<endl;
+}
+void MergeList_L(LinkList La,LinkList Lb,LinkList &Lc)
+{
+	
+		Lc=(LinkList)malloc(sizeof(LNode));
+		Lc->next=NULL;
+		LinkList pa,pb,pc,s,r,p,q;
+		pa=La->next;
+		pb=Lb->next;
+		pc=Lc;
+		while(pa&&pb)
+		{
+			if(pa->data<=pb->data)
+			{
+				pc->next=pa;
+				pc=pa;
+				pa=pa->next;
+			}
+			else
+			{
+				pc->next=pb;
+				pc=pb;
+				pb=pb->next;
+			}
+	 }
+	pc->next = pa ? pa : pb;
+	r=Lc->next;
+	s=r->next;
+	r->next=NULL;
+	while(s)
+	{
+		p=s->next;
+		s->next=r;
+		r=s;
+		s=p;
+	}
+	Lc->next=r;
+}
+int main()
+{
+	LinkList l1,l2,l;
+	int m,n;
+	cin>>m>>n;
+	InitList(l1,m);
+	InitList(l2,n);
+	MergeList_L(l1,l2,l);
+	DispList(l);
+	return 0;
+ } 

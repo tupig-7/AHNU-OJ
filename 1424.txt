@@ -1,0 +1,53 @@
+#include<iostream>
+#include<cstring>
+#include<cstdlib>
+#include<cstdio>
+using namespace std;
+int main()
+{
+	char s[100];
+	char r1[]="+",r2[]="-",r3[]="*",r4[]="/";
+	char str[100][5];
+	char*t;
+	double a[20];
+	int i=0,j=0;
+	char ch;
+	gets(s);
+	t=strtok(s," ");
+	while(t)
+	{
+		strcpy(str[i++],t);
+		t=strtok(NULL," ");
+	}
+	a[j++]=atof(str[i-1]);
+	a[j++]=atof(str[i-2]);
+	i=i-3;
+	while(i>=0)
+	{
+		if(strcmp(str[i],r1)==0)
+		{
+			a[j-2]+=a[j-1];
+			j--;
+		}
+		else if(strcmp(str[i],r2)==0)
+		{
+			a[j-2]-=a[j-1];
+			j--;
+		}
+		else if(strcmp(str[i],r3)==0)
+		{
+			a[j-2]*=a[j-1];
+			j--;
+		}
+		else if(strcmp(str[i],r4)==0)
+		{
+			a[j-2]/=a[j-1];
+			j--;
+		}
+		else
+		a[j++]=atof(str[i]);
+		i--;
+	}
+	printf("%lf",a[0]);
+	return 0;
+}

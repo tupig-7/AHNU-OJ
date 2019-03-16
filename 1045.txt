@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<string.h>
+#define N 100
+int main()
+{
+	int n,i,t,j=0,k,m=0,a[26],b[26],max=0,count=0,z=0;
+	char str[N],str1[N],stp[27]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+	scanf("%d",&t);
+	for(i=1;i<=t;i++)
+	{
+		max=0;
+		for(j=0;j<26;j++)
+			a[j]=0;
+		
+		getchar();
+		gets(str);n=strlen(str);
+		for(j=0;j<n;j++)
+		{
+		switch(str[j])
+		{
+			case 'a':  a[0]++;break;
+			case 'b':  a[1]++;break;
+			case 'c':  a[2]++;break;
+			case 'd':  a[3]++;break;
+			case 'e':  a[4]++;break;
+			case 'f':  a[5]++;break;
+			case 'g':  a[6]++;break;	
+	    	case 'h':  a[7]++;break;
+			case 'i':  a[8]++;break;
+			case 'j':  a[9]++;break;
+			case 'k':  a[10]++;break;
+			case 'l':  a[11]++;break;
+			case 'm':  a[12]++;break;
+			case 'n':  a[13]++;break;
+			case 'o':  a[14]++;break;
+			case 'p':  a[15]++;break;
+			case 'q':  a[16]++;break;
+			case 'r':  a[17]++;break;
+			case 's':  a[18]++;break;
+			case 't':  a[19]++;break;
+			case 'u':  a[20]++;break;
+			case 'v':  a[21]++;break;
+			case 'w':  a[22]++;break;
+			case 'x':  a[23]++;break;
+			case 'y':  a[24]++;break;
+			case 'z':  a[25]++;break;
+		}
+		}
+		for(k=0;k<26;k++)
+			if(max<a[k])
+	    {	max=a[k];
+	    count=k;}
+		str1[m++]=stp[count];
+		b[z++]=max;
+	}
+	for(i=0;i<m;i++)
+	printf("%c %d\n",str1[i],b[i]);
+	return 0;
+}

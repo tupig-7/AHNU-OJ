@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+	double a,sum;
+	scanf("%lf",&a);
+	if(a<5)
+		sum=a;
+	else
+		sum=0.75*a;
+	printf("%.1f\n",sum);
+	return 0;
+}

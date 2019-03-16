@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+int i,j,x,a[1000];
+scanf("%d",&x);
+for(i=0;;i++)
+{
+a[i]=x%8;
+x=x/8;
+if(x==0)
+break;
+}
+for(j=i;j>=0;j--)
+printf("%d",a[j]);
+return 0;
+}

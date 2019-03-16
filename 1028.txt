@@ -1,0 +1,29 @@
+/*??????????????????????????????????*/
+#include<iostream> 
+using namespace std;
+int a[1001][1001];
+int main(){  
+    int n,i,j;   
+    cin>>n;
+    int xstart=n,ystart=n,xend=0,yend=0;  
+    for(i=0; i<n; i++){  
+        for(j=0; j<n; j++){  
+            cin>>a[i][j];
+            if(a[i][j] == 0){  
+                if((i<xstart)||(j<ystart)){  
+                    xstart=i;  
+                    ystart=j;  
+                }  
+                if((i>xend)||(j>yend)){  
+                    xend=i;  
+                    yend=j;  
+                }  
+            }  
+        }  
+    }  
+    if(xend>xstart+1&&yend>ystart+1)
+    cout<<(xend-xstart-1)*(yend-ystart-1)<<endl;  
+    else
+    cout<<0<<endl;
+    return 0;  
+}  

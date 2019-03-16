@@ -1,0 +1,17 @@
+#include<stdio.h>
+#define N 2
+int main()
+{
+	int a[N],b[N],c,d,i,sum;
+	scanf("%d",&c);
+	scanf("%d",&d);
+	for(i=0;i<2;i++)
+	{a[i]=c%100;
+	c=c/100;}
+	for(i=0;i<2;i++)
+	{b[i]=d%100;
+	d=d/100;}
+	sum=b[0]-a[0]+60*(b[1]-a[1]);
+	printf("%d",sum);
+	return 0;
+}

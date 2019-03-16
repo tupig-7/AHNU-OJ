@@ -1,0 +1,21 @@
+#include<stdio.h>
+#define N 100
+int main()
+{
+int fish[N],i,n;
+scanf("%d",&n);
+fish[0]=1;
+do
+{
+fish[0]=fish[0]+n;
+for(i=1;i<n;i++)
+{
+	fish[i]=(fish[i-1]-1)/n*(n-1);
+	if(fish[i]%n!=1)
+		break;
+}
+}while(i<n);
+printf("%d\n",fish[0]);
+return 0;
+}
+

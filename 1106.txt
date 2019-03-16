@@ -1,0 +1,19 @@
+#include<stdio.h>
+#define N 10000
+int main()
+{
+	int a[N],i,n,sum=0;
+	while(sum==0)
+	{
+	scanf("%d",&n);
+	if(n==0)break;
+	for(i=0;i<n;i++)
+{
+	scanf("%d",&a[i]);
+	sum+=a[i];
+}
+	printf("%d\n",sum);
+	sum=0;
+	}
+	return 0;
+}

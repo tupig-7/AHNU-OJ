@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main()
+{
+    int a,b;
+    double t;
+    scanf("%d,%d",&a,&b);
+    t=(double)a/b;
+	printf("%lf",t);
+	return 0;
+}

@@ -1,0 +1,21 @@
+#include<stdio.h> 
+int fun(int m) 
+{ int i, k ; 
+for (i = m + 1 ; ; i++)
+ { 
+for (k = 2 ; k < i ; k++) 
+/**************found**************/ 
+if (i % k == 0) 
+break; 
+/**************found**************/ 
+if (m< k) 
+return i; 
+} 
+} 
+void main() 
+{ 
+int n ; 
+scanf("%d",&n); 
+n = fun(n) ; 
+printf("n=%d\n", n) ; 
+} 

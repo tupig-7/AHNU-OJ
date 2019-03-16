@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+#define N 10000
+int main()
+{
+	char str[N],str1[2]={'0'};
+	int j,k,temp=0,x,temp1[4];
+	while(strcmp(gets(str),str1)){
+		
+		k=0;
+		temp=0;
+		x=strlen(str);
+         for(j=0;j<x;j++)
+			 temp+=(str[j]-'0');
+		do
+		{k=0;
+		 do
+		 {
+			 temp1[k++]=temp%10;
+			 temp=temp/10;
+		 }while(temp!=0); 
+		 for(j=0;j<k;j++)
+			 temp+=temp1[j];
+		}while(temp>=10);	 
+		printf("%d\n",temp);}
+		return 0;
+}
+			 
+
+			 

@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int sum=0,n,x,i=0,temp1,temp2;
+	int a[10]={0};
+	cin>>n>>x;
+	for(i=x;i<=n;i++)
+	{
+		temp1=i;
+		while(temp1>0)
+		{
+			temp2=temp1%10;
+			switch(temp2)
+			{
+			case 0:a[0]++;break;
+			case 1:a[1]++;break;
+			case 2:a[2]++;break;
+			case 3:a[3]++;break;
+			case 4:a[4]++;break;
+			case 5:a[5]++;break;
+			case 6:a[6]++;break;
+			case 7:a[7]++;break;
+			case 8:a[8]++;break;
+			case 9:a[9]++;break;
+			}
+			temp1=temp1/10;
+		}
+	}
+	cout<<a[x]<<endl;
+	return 0;
+}

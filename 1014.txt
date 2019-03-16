@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{
+    int a,b,i,num,n;
+    char op;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+    scanf("%d %c %d",&a,&op,&b);
+    switch(op)
+    {
+     case '+': num=a+b;break;
+     case '-': num=a-b;break;
+     case '*': num=a*b;break;
+     case '/': num=a/b;break;
+    }
+	printf("%d\n",num);
+	}
+	return 0;
+}

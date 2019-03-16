@@ -1,0 +1,14 @@
+#include  <stdio.h>
+#include  <math.h>
+int main()
+{
+	double B,L,H,B1,H1,B2,H2,M,F;
+	int x;
+	scanf("%lf%lf%lf",&B,&L,&H);
+	scanf("%lf%lf",&B1,&H1);
+	scanf("%lf%lf",&B2,&H2);
+	scanf("%lf%lf",&M,&F);
+   x=ceil((2*B*H+2*L*H-B1*H1-B2*H2)/(M*F));
+  printf("%d\n",x);
+  return 0;
+}

@@ -1,0 +1,51 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+	char str='Y';
+	char str1[200][100];
+	char strtemp[21];
+	int a[200],b[200];
+	char str2[200],str3[200];
+	int c[200];
+	int n,i=0,j=0,temp;
+	int sum[100],count=0;
+	cin>>n;
+	for(i=0;i<n;i++)
+		cin>>str1[i]>>a[i]>>b[i]>>str2[i]>>str3[i]>>c[i];
+	for(j=0;j<n;j++)
+	{
+		sum[j]=0;
+		if(a[j]>80&&c[j]>0)
+			sum[j]+=8000;
+	
+		if(a[j]>85&&b[j]>80)
+			sum[j]+=4000;
+		
+		if(a[j]>90)
+			sum[j]+=2000;
+		
+		if((a[j]>85)&&(str3[j]==str))
+			sum[j]+=1000;
+			
+		if((b[j]>80)&&(str2[j]==str))
+			sum[j]+=850;
+		
+	}
+	for(i=0;i<n-1;i++)
+		for(j=0;j<n-1-i;j++)
+			if(sum[j]<sum[j+1])
+			{
+				 temp=sum[j];
+				strcpy(strtemp,str1[j]);
+				sum[j]=sum[j+1];
+				strcpy(str1[j],str1[j+1]);
+				sum[j+1]=temp;
+				strcpy(str1[j+1],strtemp);
+			}
+	for(i=0;i<n;i++)
+		count+=sum[i];
+	cout<<str1[0]<<endl<<sum[0]<<endl<<count<<endl;
+	return 0;
+}

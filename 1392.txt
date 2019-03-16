@@ -1,0 +1,56 @@
+#include<stdio.h>
+int zz(int m,int n);
+int main()
+{
+	int i;
+	for(i=1234;i<=2469;i++)
+		if(zz(i,i*4)==1)
+			printf("%d*4=%d\n",i,i*4);
+		return 0;
+}
+int zz(int m,int n)
+{
+	int b[4],c[4],j=0;
+	do
+	{
+		b[j++]=m%10;
+		m=m/10;
+	}while(m!=0);
+	j=0;
+	do
+	{
+		c[j++]=n%10;
+		n=n/10;
+	}while(n!=0);
+	int i=0,a[8]={0};
+	for(i=0;i<4;i++)
+	{
+	switch(b[i])
+	{
+	case 1: a[0]++;break;
+	case 2: a[1]++;break;
+	case 3: a[2]++;break;
+	case 4: a[3]++;break;
+	case 5: a[4]++;break;
+	case 6: a[5]++;break;
+	case 7: a[6]++;break;
+	case 8: a[7]++;break;
+	}
+	switch(c[i])
+	{
+	case 1: a[0]++;break;
+	case 2: a[1]++;break;
+	case 3: a[2]++;break;
+	case 4: a[3]++;break;
+	case 5: a[4]++;break;
+	case 6: a[5]++;break;
+	case 7: a[6]++;break;
+	case 8: a[7]++;break;
+	}
+	}
+	if(a[0]==1&&a[1]==1&&a[2]==1&&a[3]==1&&a[4]==1&&a[5]==1&&a[6]==1&&a[7]==1)
+		return 1;
+	else
+		return 0;
+}
+

@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	 int month[12]={31,28,31,30,31,30,31,31,30,31,30,31}; 
+	 int n;
+	 int i,j;
+	 int day=0;
+	 int m1,d1,x,m2,d2;
+	 long sum=0;
+	 cin>>n;
+	 while(n--)
+	 {
+	 	day=0;
+	 	cin>>m1>>d1>>x>>m2>>d2;
+	 	sum=x;
+	 	for(i=m1;i<m2;i++)
+	 	day+=month[i-1]-d1;
+	 	if(m1!=m2)
+	 	day+=d2;
+	 	else
+	 	day+=d2-d1;
+	 	for(j=1;j<=day;j++)
+	 	sum*=2;
+	 	cout<<sum<<endl;
+	  } 
+}

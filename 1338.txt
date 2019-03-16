@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main()
+{
+    int n;
+    double a,b,i,num;
+    char op;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+    scanf("%lf%c%lf",&a,&op,&b);
+    switch(op)
+    {
+     case '+': num=a+b;break;
+     case '-': num=a-b;break;
+     case '*': num=a*b;break;
+     case '/': 
+     if(b==0)
+    {printf("ERROR\n");
+    continue;}
+     else
+     {num=a/b;break;}
+    }
+	printf("%.2f\n",num);
+	}
+	return 0;
+}

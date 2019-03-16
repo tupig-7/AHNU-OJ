@@ -1,0 +1,44 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    char str1[81],str2[81],str3[81],str4[81];
+    char str[20][26];
+    int a[26]={0};
+    int i,max=0;
+    gets(str1);
+    gets(str2);
+    gets(str3);
+    gets(str4);
+    for(i=0;i<strlen(str1);i++)
+    if(str1[i]>='A'&&str1[i]<='Z')
+    a[str1[i]-'A']++;
+    
+    for(i=0;i<strlen(str2);i++)
+    if(str2[i]>='A'&&str2[i]<='Z')
+    a[str2[i]-'A']++;
+    
+    for(i=0;i<strlen(str3);i++)
+    if(str3[i]>='A'&&str3[i]<='Z')
+    a[str3[i]-'A']++;
+    
+    for(i=0;i<strlen(str4);i++)
+    if(str4[i]>='A'&&str4[i]<='Z')
+    a[str4[i]-'A']++;
+    for(i=0;i<26;i++)
+    max=max>a[i]?max:a[i];
+    while(max)
+    {
+     for(i=0;i<26;i++)
+     if(a[i]>=max)
+     cout<<"* ";
+     else
+     cout<<"  ";
+     cout<<endl;
+     max--;
+     }
+     cout<<"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"<<endl;
+     return 0;
+    
+}
